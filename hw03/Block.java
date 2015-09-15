@@ -23,8 +23,8 @@ public class Block{
         double volume, surfaceArea; //declare variables of double type for surface area and volume
         volume=length*width*height; //calculate volume
         surfaceArea=2*length*width+2*length*height+2*width*height; //calculate surface area
-        System.out.println("The volume of the block of dimensions " +length+" x "+ width+" x" +height+" is "+volume+".");
-        System.out.println("The surface area of the block is "+surfaceArea+".");
+        System.out.println("The volume of the block of dimensions " +length+" x "+ width+" x" +height+" is "+volume+"."); //print out volume
+        System.out.println("The surface area of the block is "+surfaceArea+"."); //print out surface area
         }
 }
         
