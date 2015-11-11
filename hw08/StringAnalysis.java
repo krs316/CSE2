@@ -2,7 +2,7 @@
 //CSE2
 //hw08 String Analysis
 //10/16/15
-//check if a string is all letters
+//checks if a string is comprised of only letters
 import java.util.Scanner; //allows scanner to be used somewher in the program
 public class StringAnalysis{
     //add main method

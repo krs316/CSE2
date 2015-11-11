@@ -2,7 +2,7 @@
 //CSE2
 //hw08 Area
 //10/16/15
-//finds the area of a trinagle, rectangle or circle
+//finds the area of a trinagle, rectangle or circle using method
 import java.util.Scanner; //allows scanner to be used somewher in the program
 public class Area{
     //add main method
