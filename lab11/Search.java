@@ -36,25 +36,28 @@ public class Search{
     }
     System.out.println(array2[0]);
     System.out.print(array2[4999]);
-    System.out.print("Enter and integer greater or equal to 0");
+    System.out.print("Enter an integer greater or equal to 0");
      int value=scan.nextInt();
      if(value>=0){
          
         int min2  = 0;
         int max2  =4999;
-        int middle = (min + max)/2;
+        int middle = (min2 + max2)/2;
  
         while( min2 <= max2 ){
             if ( array2[middle] < value ){
             min2 = middle + 1;    
+            System.out.print("hey");
+            middle=(min2+max2)/2;
             }
             else if ( array2[middle] == value ) {
             System.out.println(value + "was found");
             break;
             }
-            else{
+            else if(array2[middle]>=value){
             max2 = middle - 1;
-            max2 = (min2 + max2)/2;
+            middle=(min2+max2)/2;
+            System.out.print("bye");
             }
         }   
         if ( min2 > max2 ){

@@ -32,28 +32,14 @@ public class CSE2Linear{
          
      }
      printArray(grades); //prints out array of grades
-     System.out.print("Enter a grade to search for: ");//prompts user to enter grade to search for
+     System.out.print("Enter a grade for Binary search: ");//prompts user to enter grade to search for
      int t=scan.nextInt();//reads user input
-     int s=linear(t,grades); //sends user input and grades array to method for linear search
-     //prints out result fromm search
-     if(s!=0){
-         System.out.print(t+" was found with "+s+" iterations");
-     }
-     else{
-         System.out.print(t+" was not found with"+grades.length+" iterations");
-     }
+     Binary(t,grades); //sends user input and grades array to method for linear search
      shuffle(grades); //sends grades to shuffle method
      printArray(grades); //prints out shuffled array
-     System.out.print("Enter a grade to search for: ");//prompts user to input new grade to search for
+     System.out.print("Enter a grade for Linear search: ");//prompts user to input new grade to search for
      int r=scan.nextInt();//reads input
-     int u=linear(r,grades);//sends input and shuffled array to linear search method
-     //prints out result
-     if(u!=0){
-         System.out.println(r+" was found with "+u+"iterations");
-     }
-     else{
-         System.out.println(r+" was not found with "+grades.length+"iterations");
-     }
+     linear(r,grades);//sends input and shuffled array to linear search method
   }
   public static void printArray(int[] list){
         // prints out the array that is input into the system. Stops at correct dimension for input array
@@ -61,7 +47,7 @@ public class CSE2Linear{
         System.out.print(list[i]+" ");
         }
     }
-public static void shuffle(int[] b){
+    public static void shuffle(int[] b){
         System.out.println("\nShuffled");
         Random rand= new Random();
         int x=0;
@@ -73,12 +59,46 @@ public static void shuffle(int[] b){
         b[0]=y;
         }
     }
-    public static int linear(int y,int[] g ){
+    public static void linear(int y,int[] g ){
+        //linear search method
         for(int i=0;i<g.length;i++){
             if(g[i]==y){
-                return i+1;
+                System.out.print(y+" was found with "+(++i)+" itterations"); //prints out results
+                break;
             }
-            }
-            return 0;
+            else if(g[i]!=y&&i==g.length-1){
+                System.out.print(y+" was not found with "+(++i)+" itterations");
             }
         }
+    }
+        
+    public static void Binary(int f,int[] q){
+        int min  = 0;
+        int max  =q.length-1;
+        int middle = (min + max)/2;
+        int i=0; //used to count itterations
+        //binary search method
+        while( min <= max ){
+            if ( q[middle] < f ){
+            max =middle - 1; 
+            middle=(min+max)/2;
+            i++;
+            }
+            else if ( q[middle] == f ) {
+            System.out.println(f + " was found with "+i+" itterations"); //prints out if found
+            break;
+            }
+            else{
+            min = middle + 1;
+            middle = (min + max)/2;
+            i++;
+            }
+            
+        }   
+        if ( min > max ){
+            System.out.println(f + " was not found in the list with "+i+" itterations");//if not found by end prints out so
+            
+        }
+        
+    }
+}
